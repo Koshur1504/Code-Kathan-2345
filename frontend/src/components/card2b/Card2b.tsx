@@ -1,11 +1,23 @@
-"use client";
-
 import { Box, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import { Post } from "../../utils/types";
+
 
 interface Props {
   data: Post;
 }
+
+import {
+  Box,
+  Center,
+  useColorModeValue,
+  Heading,
+  Text,
+  Stack,
+  Image,
+  Skeleton,
+  SkeletonText,
+} from '@chakra-ui/react'
+
 
 export default function Card2b({ data }: Props) {
   return (
