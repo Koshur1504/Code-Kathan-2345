@@ -29,7 +29,7 @@ export interface User {
 export interface StoreState {
   authLoading: boolean;
   authError: boolean;
-  user?: User;
+  user?: User | Credentails;
   accessToken?: string;
   dataLoading: boolean;
   dataError: boolean;

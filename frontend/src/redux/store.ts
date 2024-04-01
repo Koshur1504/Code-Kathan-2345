@@ -7,15 +7,15 @@ import {
 import { ThunkDispatch, ThunkMiddleware, thunk } from "redux-thunk";
 
 import { AppAction, StoreState } from "./app/actionTypes";
-import { appReducer } from "./app/reducer";
 import { ArticleAction } from "./constraints/types";
+import appReducer from "./app/reducer";
 
 export interface RootState {
-  store : StoreState;
+  appReducer: StoreState;
 }
 
 const rootReducers = combineReducers<RootState>({
-  store: appReducer,
+  appReducer: appReducer,
 });
 
 declare global {

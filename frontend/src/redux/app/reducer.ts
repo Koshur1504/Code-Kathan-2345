@@ -8,7 +8,7 @@ let initialState: StoreState = {
   posts: [],
 };
 
-export function appReducer(
+function appReducer(
   state: StoreState = initialState,
   action: AppAction,
 ): StoreState {
@@ -28,3 +28,5 @@ export function appReducer(
       return state;
   }
 }
+
+export default appReducer;
