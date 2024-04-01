@@ -330,7 +330,7 @@ export const Home = () => {
               data={data.filter((item) => item.category === "travel")[3]}
             />
           </Grid>
-          <Box width={`100vw`} ml={["-2", "-4", "-6", "-8"]}>
+          <Box width={"full"}>
             <Carousel />
           </Box>
         </Stack>
