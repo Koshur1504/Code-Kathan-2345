@@ -49,7 +49,23 @@ code-kathan-2345
 │   │   ├── assets/
 │   │   │   └── .dummy
 │   │   ├── components/
-│   │   │   └── .dummy
+│   │   │   ├── Card2a
+│   │   │   │    └── Card2a.tsx
+│   │   │   ├── Card2b
+│   │   │   │   └── Card2b.tsx
+│   │   │   ├── Card5
+│   │   │   │   └── Card5.tsx
+│   │   │   ├── Card6
+│   │   │   │    └── Card6.tsx
+│   │   │   ├── Card6a
+│   │   │   │    └── Card6a.tsx
+│   │   │   ├── Footer
+│   │   │   │    └── Footer.tsx
+│   │   │   │    └── Modal.tsx
+│   │   │   ├── TwoCards
+│   │   │   │    └── TwoCards.tsx
+│   │   │   ├── SearchCard
+│   │   │   │    └── SearchCard.tsx
 │   │   ├── context/
 │   │   │   └── .dummy
 │   │   ├── hooks/
