@@ -57,8 +57,31 @@ export const Buisness = () => {
             gap={"2rem"}
           >
 
+
             <Card5b data={data[33]} />
             <Card1 data={data[1]} />
+
+        <Grid
+          justifyItems={"center"}
+          templateColumns={["repeat(1,1fr)", "repeat(3,1fr)", "repeat(5,1fr)"]}
+          alignContent={"center"}
+          marginX="auto"
+        >
+          <Box>
+            <Card1 data={data[1]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[2]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[3]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[4]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[5]}/>
+
           </Box>
 
           <Grid
@@ -95,6 +118,18 @@ export const Buisness = () => {
           <Card3a data={data[10]} />
           <Card3a data={data[11]} />
           <Card3a data={data[12]} />
+
+      <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }} mb={20} mt={20} >
+        <Card3a data={data[0]}/>
+        <Card3a data={data[1]}/>
+        <Card3a data={data[2]}/>
+      </Grid>
+    </Box>
+        <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }} mb={20}>
+          <Card3a data={data[3]}/>
+          <Card3a data={data[4]}/>
+          <Card3a data={data[5]}/>
+
         </Grid>
       </Box>
 
@@ -142,6 +177,7 @@ export const Buisness = () => {
           gap={3}
         >
           <Box>
+
             <Card1 data={data[13]} />
           </Box>
           <Box>
@@ -161,6 +197,26 @@ export const Buisness = () => {
           </Box>
           <Box>
             <Card1 data={data[19]} />
+
+            <Card1 data={data[13]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[14]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[15]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[16]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[17]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[18]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[19]}/>
           </Box>
           <Box>
             <Card1 data={data[20]} />

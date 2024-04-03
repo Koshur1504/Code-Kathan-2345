@@ -1,3 +1,4 @@
+
 import {
   Box,
   Button,
@@ -5,6 +6,9 @@ import {
   Grid,
   Heading
 } from "@chakra-ui/react";
+
+import { Box, Button, Divider, Grid, Heading } from "@chakra-ui/react";
+
 import { useEffect, useState } from "react";
 import Card5 from "../../components/Card5/Card5";
 import Carousel from "../../components/CrousalCard/Crousal";
@@ -16,11 +20,41 @@ import { Post } from "../../utils/types";
 import postData from "../../../../backend/db.json";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 
+
 export const Culture = () => {
   const [isLoaded, setIsloading] = useState(false);
   let data: Post[] = postData.posts
     .filter((post) => post.category === "culture")
     .slice(1, 30);
+
+
+
+
+export const Culture = () => {
+  const [isLoaded, setIsloading] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+  let data: Post[] = postData.posts;
+  console.log(data);
 
   const handleToggle = () => {
     setIsloading(!isLoaded);
@@ -49,8 +83,13 @@ export const Culture = () => {
   return (
     <>
       <Navbar />
+
       <Box px={[2, 4, 6, 8]}>
         <Heading bg={"yellow"}>Culture</Heading>
+
+      <Box w={"84%"} marginX="auto">
+        <Heading>Culture</Heading>
+
         <br />
         <Divider height={"2px"} backgroundColor={"black"} />
         <br />
@@ -63,6 +102,7 @@ export const Culture = () => {
           marginX="auto"
         >
           <Box>
+
             <InnovationCard isLoaded={isLoaded} data={data[1]} />
           </Box>
           <Box>
@@ -73,6 +113,21 @@ export const Culture = () => {
           </Box>
           <Box>
             <InnovationCard isLoaded={isLoaded} data={data[5]} />
+          </Box>
+        </Grid>
+
+
+
+            <InnovationCard isLoaded={isLoaded} data={data[0]} />
+          </Box>
+          <Box>
+            <InnovationCard isLoaded={isLoaded} data={data[1]} />
+          </Box>
+          <Box>
+            <InnovationCard isLoaded={isLoaded} data={data[2]} />
+          </Box>
+          <Box>
+            <InnovationCard isLoaded={isLoaded} data={data[3]} />
           </Box>
         </Grid>
 
@@ -110,6 +165,39 @@ export const Culture = () => {
         <Heading fontSize={'25'}>Features</Heading>
         <br />
         <Card5 data={data[11]} />
+
+        <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }} gap={"5"}>
+          <Box>
+            <InnovationCard2
+              isLoaded={isLoaded}
+              data={data.filter((item) => item.category === "culture")[2]}
+            />
+          </Box>
+          <Box>
+            <InnovationCard2
+              isLoaded={isLoaded}
+              data={data.filter((item) => item.category === "culture")[3]}
+            />
+          </Box>
+          <Box>
+            <InnovationCard2 isLoaded={isLoaded} data={data[6]} />
+          </Box>
+          <Box>
+            <InnovationCard2 isLoaded={isLoaded} data={data[7]} />
+          </Box>
+          <Box>
+            <InnovationCard2 isLoaded={isLoaded} data={data[8]} />
+          </Box>
+        </Grid>
+      </Box>
+      <Carousel />
+      <Button onClick={handleToggle}>Toggle</Button>
+      <Box w={"84%"} marginX="auto">
+        <Divider height={"2px"} backgroundColor={"black"} />
+        <Heading fontSize={"25"}>Features</Heading>
+        <br />
+        <Card5 />
+
         <br />
 
         <Grid
@@ -120,6 +208,7 @@ export const Culture = () => {
           marginX="auto"
         >
           <Box>
+
             <InnovationCard isLoaded={isLoaded} data={data[12]} />
           </Box>
           <Box>
@@ -142,10 +231,37 @@ export const Culture = () => {
           </Box>
           <Box>
             <InnovationCard isLoaded={isLoaded} data={data[19]} />
+           
+          </Box>
+          <Box>
+            <InnovationCard isLoaded={isLoaded} data={data[10]} />
+          </Box>
+          <Box>
+            <InnovationCard isLoaded={isLoaded} data={data[11]} />
+          </Box>
+          <Box>
+            <InnovationCard isLoaded={isLoaded} data={data[12]} />
+          </Box>
+          <Box>
+            <InnovationCard isLoaded={isLoaded} data={data[13]} />
+          </Box>
+          <Box>
+            <InnovationCard isLoaded={isLoaded} data={data[14]} />
+          </Box>
+          <Box>
+            <InnovationCard isLoaded={isLoaded} data={data[15]} />
+          </Box>
+          <Box>
+            <InnovationCard isLoaded={isLoaded} data={data[16]} />
+
           </Box>
         </Grid>
       </Box>
       <Carousel />
+
+
+      
+
       {isVisible && (
         <Box
           onClick={scrollToTop}
@@ -166,7 +282,12 @@ export const Culture = () => {
           </Button>
         </Box>
       )}
-      <Footer />
+
+      
+
+     <Footer />
+      
+
     </>
   );
 };
