@@ -43,6 +43,7 @@ export const Buisness = () => {
   return (
     <>
       <Navbar />
+      <Navbar />
       <Box p={5}>
         <Heading bg={"yellow"}>Buisness</Heading>
         <br />
@@ -184,7 +185,23 @@ export const Buisness = () => {
         <SearchCard />
         <SearchCard />
       </Box>
+      <Box p={10}>
+        <Divider backgroundColor={"black"} height={"2px"} />
+        <Heading fontSize={"20px"} mt={5} mb={5}>
+          More in Buisness
+        </Heading>
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+      </Box>
 
+      {isVisible && (
       {isVisible && (
         <Box
           onClick={scrollToTop}
