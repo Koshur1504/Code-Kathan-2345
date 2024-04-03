@@ -26,7 +26,7 @@ function Card6({ data }: Props) {
     <Card >
 
       <Image
-        src={data.image1}
+        src={data.image2}
         alt='Green double couch with wooden legs'
 
       />

@@ -6,13 +6,15 @@ import {
   SkeletonText,
   Text
 } from "@chakra-ui/react";
-import { IArticle } from "../../utils/dataContext/types";
+import { Post } from "../../utils/types";
+
 
 
 interface Props {
-  data: IArticle;
+  isLoaded:boolean
+  data: Post;
 }
-const InnovationCard = ({ isLoaded }: { isLoaded: boolean }, { data }: Props) => {
+const InnovationCard = ({ isLoaded , data }: Props) => {
   console.log(isLoaded);
   !data &&
     (data = {
@@ -36,7 +38,7 @@ const InnovationCard = ({ isLoaded }: { isLoaded: boolean }, { data }: Props) =>
       <Link fontSize={"20"} fontWeight={"800"} as={"a"} href={data.articleLink}>
         <Skeleton isLoaded={!isLoaded}>
 
-          <Image src={data.image2} />{" "}
+          <Image src={data.image2}  w={"100%"}/>{" "}
         </Skeleton>
         <SkeletonText isLoaded={!isLoaded}>
           {data.title}

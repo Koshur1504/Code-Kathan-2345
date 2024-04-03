@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Button, Divider, Grid, Heading, SimpleGrid } from "@chakra-ui/react";
 import postData from "../../../../backend/db.json";
 import Card2a from "../../components/Card2a/Card2a";
 import { Card1a } from "../../components/card_1a/Card_1a";
@@ -8,27 +8,55 @@ import { Card1b } from "../../components/Card1b/Card1b";
 import Card5b from "../../components/Card5b/Card5b";
 import Card1 from "../../components/Card_1/Card1";
 import Carousel from "../../components/CrousalCard/Crousal";
+import { Navbar } from "../../components/navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+import { ArrowUpIcon } from "@chakra-ui/icons";
+import { useEffect, useState } from "react";
 
 export const Travel = () => {
-  let data: Post[] = postData.posts.slice(0, 40);
-  return (
+  let data: Post[] = postData.posts
+    .filter((post) => post.category === "travel")
+    .slice(1, 32);
+  const [isVisible, setIsVisible] = useState(false);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+  return (<>
+    <Navbar />
     <Box
-      p="20px"
+      p="15"
       pr={{ base: "20px", md: "60px" }}
       pl={{ base: "20px", md: "60px" }}
     >
+
       {/* 1st */}
-      <Heading as="h1" fontWeight="800">
+      <Heading bg={"yellow"} as="h1" fontWeight="800">
         Travel
       </Heading>
       <br />
       <Divider backgroundColor={"black"} h="1px" />
       <br />
-      <Card1a data={data[21]} />
+      <Card1a data={data[1]} />
       {/* 2nd */}
       <SimpleGrid columns={{ base: 1, md: 2 }} gap="30px" mt="40px">
-        <Card2a data={data[25]} />
-        <Card2a data={data[12]} />
+        <Card2a data={data[2]} />
+        <Card2a data={data[3]} />
       </SimpleGrid>
       <br />
       <Divider backgroundColor={"black"} h="1px" />
@@ -48,11 +76,11 @@ export const Travel = () => {
           ]}
           gap={10}
         >
-          <Card1b data={data[14]} />
-          <Card1b data={data[15]} />
-          <Card1b data={data[16]} />
-          <Card1b data={data[17]} />
-          <Card1b data={data[18]} />
+          <Card1b data={data[4]} />
+          <Card1b data={data[5]} />
+          <Card1b data={data[6]} />
+          <Card1b data={data[7]} />
+          <Card1b data={data[8]} />
         </Grid>
       </Box>
       <br /> <br />
@@ -70,26 +98,26 @@ export const Travel = () => {
             "repeat(1, 1fr)",
             "repeat(2, 1fr)",
             "repeat(3, 1fr)"
-           
+
           ]}
           gap={10}
         >
-          <Card1 data={data[19]}/>
-          <Card1 data={data[20]}/>
-          <Card1 data={data[21]}/>
-          <Card1 data={data[23]}/>
-          <Card1 data={data[22]}/>
-          <Card1 data={data[24]}/>
+          <Card1 data={data[9]} />
+          <Card1 data={data[10]} />
+          <Card1 data={data[11]} />
+          <Card1 data={data[12]} />
+          <Card1 data={data[13]} />
+          <Card1 data={data[14]} />
         </Grid>
       </Box>
       <br /> <br />
       <Divider backgroundColor={"black"} h="1px" />
       <br />
       <Box>
-      <Heading fontSize="24px" fontWeight="600">
-         In Picture
+        <Heading fontSize="24px" fontWeight="600">
+          In Picture
         </Heading> <br />
-        <Card1a data={data[2]} />
+        <Card1a data={data[15]} />
       </Box>
       <br /><br />
       <Divider backgroundColor={"black"} h="2px" />
@@ -98,7 +126,7 @@ export const Travel = () => {
       {/* 5th */}
       <Box>
         <Heading fontSize="24px" fontWeight="600">
-         The Specialist
+          The Specialist
         </Heading>
         <br />
         <Grid
@@ -107,24 +135,24 @@ export const Travel = () => {
             "repeat(2, 1fr)",
             "repeat(3, 1fr)",
             "repeat(4, 1fr)",
-           
+
           ]}
           gap={10}
         >
-          <Card1 data={data[0]}/>
-          <Card1 data={data[25]}/>
-          <Card1 data={data[3]}/>
-          <Card1 data={data[4]}/>
-          <Card1 data={data[5]}/>
-          <Card1 data={data[6]}/>
-          <Card1 data={data[7]}/>
-          <Card1 data= {data[8]}/>
+          <Card1 data={data[16]} />
+          <Card1 data={data[17]} />
+          <Card1 data={data[18]} />
+          <Card1 data={data[19]} />
+          <Card1 data={data[20]} />
+          <Card1 data={data[21]} />
+          <Card1 data={data[22]} />
+          <Card1 data={data[23]} />
         </Grid>
       </Box>
-       <br /><br />
+      <br /><br />
       {/* 6th */}
       <Box>
-        <Carousel/>
+        <Carousel />
       </Box>
 
       {/* 7 */}
@@ -133,23 +161,23 @@ export const Travel = () => {
       <br />
       <Box>
         <Heading fontSize="24px" fontWeight="600">
-        Green Gateways
+          Green Gateways
         </Heading>
         <br />
         <Grid
           templateColumns={[
             "repeat(1, 1fr)",
             "repeat(2, 1fr)",
-           
-           
+
+
           ]}
           gap={10}
         >
-          <Card1 data={data[26]}/>
-          <Card1 data={data[27]}/>
-          <Card1 data={data[28]}/>
-          <Card1 data={data[29]}/>
-          
+          <Card1 data={data[24]} />
+          <Card1 data={data[25]} />
+          <Card1 data={data[26]} />
+          <Card1 data={data[27]} />
+
         </Grid>
       </Box>
       {/* 8 */}
@@ -158,7 +186,7 @@ export const Travel = () => {
       <br />
       <Box>
         <Heading fontSize="24px" fontWeight="600">
-      World's Table
+          World's Table
         </Heading>
         <br />
         <Grid
@@ -167,15 +195,15 @@ export const Travel = () => {
             "repeat(2, 1fr)",
             "repeat(3, 1fr)",
             "repeat(4, 1fr)",
-               
+
           ]}
           gap={10}
         >
-          <Card1 data={data[30]}/>
-          <Card1 data={data[31]}/>
-          <Card1 data={data[32]}/>
-          <Card1 data={data[33]}/>
-          
+          <Card1 data={data[28]} />
+          <Card1 data={data[29]} />
+          <Card1 data={data[30]} />
+          <Card1 data={data[31]} />
+
         </Grid>
       </Box>
       <br /><br />
@@ -185,11 +213,33 @@ export const Travel = () => {
       {/* 9 */}
       <Box>
         <Heading fontSize="24px" fontWeight="600">More on Travel</Heading> <br />
-        <Card5b data={data[34]}/>
-        <Card5b data={data[35]}/>
-        <Card5b data={data[36]}/>
-        <Card5b data={data[37]}/>
+        <Card5b data={data[32]} />
+        <Card5b data={data[33]} />
+        <Card5b data={data[34]} />
+        <Card5b data={data[35]} />
       </Box>
     </Box>
+    {isVisible && (
+        <Box
+          onClick={scrollToTop}
+          position="fixed"
+          bottom="20px"
+          right={["16px", "84px"]}
+          zIndex={3}
+        >
+          <Button
+            w="50px"
+            h="50px"
+            variant="outline"
+            bg={"black"}
+            borderRadius={"50%"}
+            _hover={{ bg: "black", w: "55px", h: "55px" }}
+          >
+            <ArrowUpIcon fontSize={"lg"} color={"white"} />
+          </Button>
+        </Box>
+      )}
+    <Footer/>
+  </>
   );
 };

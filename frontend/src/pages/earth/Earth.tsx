@@ -41,9 +41,17 @@ export const Earth = () => {
 
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
+
+  
   return <>
     <Navbar />
     {/* 1st l1 */}
+    <Heading bg={"yellow"} as="h1" fontWeight="800">
+        Earth
+      </Heading>
+      <br />
+      <Divider backgroundColor={"black"} h="1px" />
+      <br />
     <Box p={{ base: 5, md: 10 }} display={{ base: "block", md: "flex" }}>
       <Card6 data={data[1]} />
       <Box

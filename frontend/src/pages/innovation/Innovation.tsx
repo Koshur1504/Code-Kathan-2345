@@ -5,13 +5,16 @@ import {
   Grid,
   Heading
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card5 from "../../components/Card5/Card5";
 import Carousel from "../../components/CrousalCard/Crousal";
 import InnovationCard from "../../components/InnovationCard/InnovationCard";
 import InnovationCard2 from "../../components/InnovationCard/InnovationCard2";
 import { Post } from "../../utils/types";
 import postData from "../../../../backend/db.json";
+import { Navbar } from "../../components/navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+import { ArrowUpIcon } from "@chakra-ui/icons";
 
 
 export const Innovation = () => {
@@ -25,32 +28,54 @@ export const Innovation = () => {
     setIsloading(!isLoaded);
   };
 
+  const [isVisible, setIsVisible] = useState(false);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
   return (
     <>
-      <Box w={"84%"} marginX="auto">
-        <Heading>Innovation</Heading>
+    <Navbar/>
+      <Box p={5} >
+        <Heading bg={"yellow"}>Innovation</Heading>
         <br />
         <Divider height={"2px"} backgroundColor={"black"}  />
         <br />
 
         <Grid
-          gap={"6"}
+         
           justifyItems={"center"}
           templateColumns={{ sm: "1fr", md: "repeat(4, 1fr)" }}
           alignContent={"center"}
           marginX="auto"
+         gap={3}
         >
           <Box>
             <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[2]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[3]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[4]}/>
           </Box>
         </Grid>
 
@@ -64,30 +89,30 @@ export const Innovation = () => {
         
         >
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard2 isLoaded={isLoaded} data={data[5]}/>
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard2 isLoaded={isLoaded} data={data[6]}/>
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard2 isLoaded={isLoaded} data={data[7]}/>
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard2 isLoaded={isLoaded} data={data[8]}/>
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard2 isLoaded={isLoaded} data={data[9]}/>
           </Box>
         </Grid>
         
       </Box>
       <Carousel />
       <Button onClick={handleToggle}>Toggle</Button>
-     <Box w={'84%'} marginX="auto" >
+     <Box p={5} >
       <Divider height={"2px"} backgroundColor={"black"} />
       <Heading fontSize={'25'}>Features</Heading>
       <br />
-      <Card5 data={data[1]}/>
+      <Card5 data={data[10]}/>
       <br />
       
       <Grid
@@ -98,32 +123,55 @@ export const Innovation = () => {
           marginX="auto"
         >
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[11]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[12]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[13]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[14]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[15]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[16]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[17]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[18]}/>
           </Box>
         </Grid>
      </Box>
      <Carousel />
+     
+     {isVisible && (
+        <Box
+          onClick={scrollToTop}
+          position="fixed"
+          bottom="20px"
+          right={["16px", "84px"]}
+          zIndex={3}
+        >
+          <Button
+            w="50px"
+            h="50px"
+            variant="outline"
+            bg={"black"}
+            borderRadius={"50%"}
+            _hover={{ bg: "black", w: "55px", h: "55px" }}
+          >
+            <ArrowUpIcon fontSize={"lg"} color={"white"} />
+          </Button>
+        </Box>
+      )}
+
+     <Footer/>
     </>
   );
 };

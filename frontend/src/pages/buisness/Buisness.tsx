@@ -16,8 +16,8 @@ import { ArrowUpIcon } from "@chakra-ui/icons";
 
 export const Buisness = () => {
   let data: Post[] = postData.posts
-  .filter((post) => post.category === "buissness")
-  .slice(1, 32);
+    .filter((post) => post.category === "buissness")
+    .slice(1, 32);
   const [isVisible, setIsVisible] = useState(false);
 
   const scrollToTop = () => {
@@ -42,58 +42,58 @@ export const Buisness = () => {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Box p={5}>
-        <Heading>Buisness</Heading>
+        <Heading bg={"yellow"}>Buisness</Heading>
         <br />
         <Divider backgroundColor={"black"} height={"2px"} />
         <br />
-        <Box flexDirection={["column", "row"]} display={"flex"} gap={"2rem"}>
+        <Box flexDirection={["column", "column"]} display={"flex"} gap={"2rem"}>
 
-        <Box
-          flexDirection={["column", "row", "row"]}
-          display={"flex"}
-          gap={"2rem"}
-        >
+          <Box
+            flexDirection={["column", "row", "row"]}
+            display={"flex"}
+            gap={"2rem"}
+          >
 
-          <Card5b data={data[33]}/>
-          <Card1 data={data[1]} />
+            <Card5b data={data[33]} />
+            <Card1 data={data[1]} />
+          </Box>
+
+          <Grid
+            justifyItems={"center"}
+            templateColumns={["repeat(1,1fr)", "repeat(3,1fr)", "repeat(5,1fr)"]}
+            alignContent={"center"}
+            marginX="auto"
+            gap={3}
+          >
+            <Box>
+              <Card1 data={data[2]} />
+            </Box>
+            <Box>
+              <Card1 data={data[3]} />
+            </Box>
+            <Box>
+              <Card1 data={data[4]} />
+            </Box>
+            <Box>
+              <Card1 data={data[5]} />
+            </Box>
+            <Box>
+              <Card1 data={data[6]} />
+            </Box>
+          </Grid>
+
+          <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }} mb={20} mt={20} >
+            <Card3a data={data[7]} />
+            <Card3a data={data[8]} />
+            <Card3a data={data[9]} />
+          </Grid>
         </Box>
-
-        <Grid
-          justifyItems={"center"}
-          templateColumns={["repeat(1,1fr)", "repeat(3,1fr)", "repeat(5,1fr)"]}
-          alignContent={"center"}
-          marginX="auto"
-          
-        >
-          <Box>
-            <Card1 data={data[2]}/>
-          </Box>
-          <Box>
-            <Card1 data={data[3]}/>
-          </Box>
-          <Box>
-            <Card1 data={data[4]}/>
-          </Box>
-          <Box>
-            <Card1 data={data[5]}/>
-          </Box>
-          <Box>
-            <Card1 data={data[6]}/>
-          </Box>
-        </Grid>
-
-      <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }} mb={20} mt={20} >
-        <Card3a data={data[7]}/>
-        <Card3a data={data[8]}/>
-        <Card3a data={data[9]}/>
-      </Grid>
-    </Box>
         <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }} mb={20}>
-          <Card3a data={data[10]}/>
-          <Card3a data={data[11]}/>
-          <Card3a data={data[12]}/>
+          <Card3a data={data[10]} />
+          <Card3a data={data[11]} />
+          <Card3a data={data[12]} />
         </Grid>
       </Box>
 
@@ -107,7 +107,7 @@ export const Buisness = () => {
         <br />
         <TwoCards />
         <Divider backgroundColor={"black"} height={"2px"} mb={5} />
-        <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }}>
+        <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }} gap={3}>
           <Card2b data={data[13]} />
           <Card2b data={data[14]} />
           <Card2b data={data[15]} />
@@ -138,30 +138,31 @@ export const Buisness = () => {
           alignContent={"center"}
           marginX="auto"
           mt={10}
+          gap={3}
         >
           <Box>
-            <Card1 data={data[16]}/>
+            <Card1 data={data[13]} />
           </Box>
           <Box>
-            <Card1 data={data[17]}/>
+            <Card1 data={data[14]} />
           </Box>
           <Box>
-            <Card1 data={data[18]}/>
+            <Card1 data={data[15]} />
           </Box>
           <Box>
-            <Card1 data={data[19]}/>
+            <Card1 data={data[16]} />
           </Box>
           <Box>
-            <Card1 data={data[20]}/>
+            <Card1 data={data[17]} />
           </Box>
           <Box>
-            <Card1 data={data[21]}/>
+            <Card1 data={data[18]} />
           </Box>
           <Box>
-            <Card1 data={data[22]}/>
+            <Card1 data={data[19]} />
           </Box>
           <Box>
-            <Card1 data={data[23]} />
+            <Card1 data={data[20]} />
           </Box>
         </Grid>
       </Box>
@@ -173,18 +174,18 @@ export const Buisness = () => {
         <Heading fontSize={"20px"} mt={5} mb={5}>
           More in Buisness
         </Heading>
-        <SearchCard data={data[24]}/>
-        <SearchCard data={data[25]}/>
-        <SearchCard data={data[26]}/>
-        <SearchCard data={data[27]}/>
-        <SearchCard data={data[28]}/>
-        <SearchCard data={data[29]}/>
-        <SearchCard data={data[30]}/>
-        <SearchCard data={data[31]}/>
-        <SearchCard data={data[32]}/>
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
+        <SearchCard />
       </Box>
 
-    {isVisible && (
+      {isVisible && (
         <Box
           onClick={scrollToTop}
           position="fixed"
@@ -204,8 +205,8 @@ export const Buisness = () => {
           </Button>
         </Box>
       )}
-      <Footer/>
-  </>
+      <Footer />
+    </>
   )
 }
 
