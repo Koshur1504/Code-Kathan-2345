@@ -48,13 +48,14 @@ export const Sports = () => {
     <>
       <Navbar />
       <Box>
-        <Heading fontSize={"4rem"} bg={"#f5d22e"} p={3}>
-          SPORTS
+        <Heading ml={[2, 4, 6, 8]} bg={"yellow"} >
+          Sports
         </Heading>
-
-        <Divider backgroundColor={"black"} height={"1px"} />
+        <br />
+        <Divider backgroundColor={"black"} h="1px" />
+        <br />
       </Box>
-      <Box p={5}>
+      <Box px={[2, 4, 6, 8]}>
         <Box flexDirection={["column", "row"]} display={"flex"} gap={"2rem"}>
           <Card5b />
           <Card1 data={data[0]} />
@@ -97,7 +98,7 @@ export const Sports = () => {
 
       <Carousel data={crousalData.slice(10, 20)} />
 
-      <Box p={5} mt={8}>
+      <Box px={[2, 4, 6, 8]} mt={8}>
         <br />
         <Divider backgroundColor={"black"} height={"2px"} />
         <Text fontSize={"20px"}>Finance and Economy</Text>
@@ -111,7 +112,7 @@ export const Sports = () => {
         </Grid>
       </Box>
 
-      <Box mt={10} p={5}>
+      <Box px={[2, 4, 6, 8]} p={5}>
         <Divider backgroundColor={"black"} height={"2px"} />
         <Heading fontSize={"20px"} mt={5} mb={5}>
           Technology and Science
@@ -119,7 +120,7 @@ export const Sports = () => {
         <TwoCards />
       </Box>
 
-      <Box p={5}>
+      <Box px={[2, 4, 6, 8]}>
         <Divider backgroundColor={"black"} height={"2px"} />
         <Heading fontSize={"20px"} mt={5} mb={5}>
           Executive
@@ -166,7 +167,7 @@ export const Sports = () => {
 
       <Carousel data={crousalData.slice(21, 30)} />
 
-      <Box p={10}>
+      <Box px={[2, 4, 6, 8]}>
         <Divider backgroundColor={"black"} height={"2px"} />
         <Heading fontSize={"20px"} mt={5} mb={5}>
           More in Buisness

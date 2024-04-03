@@ -48,8 +48,8 @@ export const News = () => {
   return (
     <>
       <Navbar />
-      <Box p={5}>
-        <Heading color={"#cd2626"} fontSize={"4rem"} lineHeight={1}>
+      <Box px={[2, 4, 6, 8]}>
+        <Heading bg={"yellow"} >
           NEWS
         </Heading>
         <br />
@@ -97,7 +97,7 @@ export const News = () => {
 
       <Carousel data={crousalData.slice(11, 20)} />
 
-      <Box p={5} mt={8}>
+      <Box px={[2, 4, 6, 8]} mt={8}>
         <br />
         <Divider backgroundColor={"black"} height={"2px"} />
         <Text fontSize={"20px"}>Finance and Economy</Text>
@@ -111,7 +111,7 @@ export const News = () => {
         </Grid>
       </Box>
 
-      <Box mt={10} p={5}>
+      <Box px={[2, 4, 6, 8]} p={5}>
         <Divider backgroundColor={"black"} height={"2px"} />
         <Heading fontSize={"20px"} mt={5} mb={5}>
           Technology and Science
@@ -119,7 +119,7 @@ export const News = () => {
         <TwoCards />
       </Box>
 
-      <Box p={5}>
+      <Box px={[2, 4, 6, 8]}>
         <Divider backgroundColor={"black"} height={"2px"} />
         <Heading fontSize={"20px"} mt={5} mb={5}>
           Executive
@@ -166,7 +166,7 @@ export const News = () => {
 
       <Carousel data={crousalData.slice(0, 10)} />
 
-      <Box p={10}>
+      <Box px={[2, 4, 6, 8]}>
         <Divider backgroundColor={"black"} height={"2px"} />
         <Heading fontSize={"20px"} mt={5} mb={5}>
           More in Buisness

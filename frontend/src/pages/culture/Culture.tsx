@@ -19,13 +19,13 @@ import { ArrowUpIcon } from "@chakra-ui/icons";
 export const Culture = () => {
   const [isLoaded, setIsloading] = useState(false);
   let data: Post[] = postData.posts
-  .filter((post) => post.category === "culture")
-  .slice(1, 30);
+    .filter((post) => post.category === "culture")
+    .slice(1, 30);
 
   const handleToggle = () => {
     setIsloading(!isLoaded);
   };
-  
+
   const [isVisible, setIsVisible] = useState(false);
   const scrollToTop = () => {
     window.scrollTo({
@@ -48,8 +48,8 @@ export const Culture = () => {
   }, []);
   return (
     <>
-    <Navbar />
-      <Box p={5}>
+      <Navbar />
+      <Box px={[2, 4, 6, 8]}>
         <Heading bg={"yellow"}>Culture</Heading>
         <br />
         <Divider height={"2px"} backgroundColor={"black"} />
@@ -63,56 +63,56 @@ export const Culture = () => {
           marginX="auto"
         >
           <Box>
-            <InnovationCard isLoaded={isLoaded}  data={data[1]} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]} />
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[2]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[2]} />
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[4]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[4]} />
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[5]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[5]} />
           </Box>
         </Grid>
 
-        
+
         <br />
-        <Divider height={"2px"} backgroundColor={"black"}   />
+        <Divider height={"2px"} backgroundColor={"black"} />
         <Heading fontSize={"20"}>Science and health</Heading>
         <br />
         <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }}
-           gap={'5'}
-        
+          gap={'5'}
+
         >
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} data={data[6]}/>
+            <InnovationCard2 isLoaded={isLoaded} data={data[6]} />
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} data={data[7]}/>
+            <InnovationCard2 isLoaded={isLoaded} data={data[7]} />
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} data={data[8]}/>
+            <InnovationCard2 isLoaded={isLoaded} data={data[8]} />
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} data={data[9]}/>
+            <InnovationCard2 isLoaded={isLoaded} data={data[9]} />
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} data={data[10]}/>
+            <InnovationCard2 isLoaded={isLoaded} data={data[10]} />
           </Box>
         </Grid>
-        
+
       </Box>
       <Carousel />
       <Button onClick={handleToggle}>Toggle</Button>
-     <Box p={5} >
-      <Divider height={"2px"} backgroundColor={"black"} />
-      <Heading fontSize={'25'}>Features</Heading>
-      <br />
-      <Card5 data={data[11]}/>
-      <br />
-      
-      <Grid
+      <Box px={[2, 4, 6, 8]} >
+        <Divider height={"2px"} backgroundColor={"black"} />
+        <Heading fontSize={'25'}>Features</Heading>
+        <br />
+        <Card5 data={data[11]} />
+        <br />
+
+        <Grid
           gap={"6"}
           justifyItems={"center"}
           templateColumns={{ sm: "1fr", md: "repeat(4, 1fr)" }}
@@ -120,33 +120,33 @@ export const Culture = () => {
           marginX="auto"
         >
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[12]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[12]} />
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[13]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[13]} />
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[14]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[14]} />
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[15]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[15]} />
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[16]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[16]} />
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[17]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[17]} />
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[18]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[18]} />
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} data={data[19]}/>
+            <InnovationCard isLoaded={isLoaded} data={data[19]} />
           </Box>
         </Grid>
-     </Box>
-     <Carousel />
-     {isVisible && (
+      </Box>
+      <Carousel />
+      {isVisible && (
         <Box
           onClick={scrollToTop}
           position="fixed"
@@ -166,7 +166,7 @@ export const Culture = () => {
           </Button>
         </Box>
       )}
-     <Footer />
+      <Footer />
     </>
   );
 };

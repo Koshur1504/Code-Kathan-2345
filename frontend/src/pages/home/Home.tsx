@@ -49,6 +49,7 @@ export const Home = () => {
     <>
       <Navbar />
       <Stack px={[2, 4, 6, 8]} gap={4}>
+      
         <Grid
           templateColumns={[
             "repeat(1,1fr)",

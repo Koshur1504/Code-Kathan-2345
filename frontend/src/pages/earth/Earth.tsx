@@ -17,8 +17,8 @@ import postData from "../../../../backend/db.json";
 export const Earth = () => {
   const [isVisible, setIsVisible] = useState(false);
   let data: Post[] = postData.posts
-  .filter((post) => post.category === "earth")
-  .slice(1, 30);
+    .filter((post) => post.category === "earth")
+    .slice(1, 30);
 
   console.log(data[1]);
 
@@ -42,17 +42,17 @@ export const Earth = () => {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  
+
   return <>
     <Navbar />
     {/* 1st l1 */}
-    <Heading bg={"yellow"} as="h1" fontWeight="800">
-        Earth
-      </Heading>
-      <br />
-      <Divider backgroundColor={"black"} h="1px" />
-      <br />
-    <Box p={{ base: 5, md: 10 }} display={{ base: "block", md: "flex" }}>
+    <Heading ml={[2, 4, 6, 8]}  bg={"yellow"} >
+      Earth
+    </Heading>
+    <br />
+    <Divider backgroundColor={"black"} h="1px" />
+    <br />
+    <Box px={[2, 4, 6, 8]} display={{ base: "block", md: "flex" }}>
       <Card6 data={data[1]} />
       <Box
         display="flex"
@@ -60,42 +60,42 @@ export const Earth = () => {
         w={{ base: "100%", md: "40%" }}
       >
 
-        <Card6a data={data[2]}/>
-        <Card6a data={data[3]}/>
-        <Card6a data={data[4]}/>
+        <Card6a data={data[2]} />
+        <Card6a data={data[3]} />
+        <Card6a data={data[4]} />
 
       </Box>
     </Box>
     {/* 2nd l */}
 
-    <Box p={{ base: 5, md: 10 }} display={{ base: "grid" }}>
+    <Box px={[2, 4, 6, 8]} display={{ base: "grid" }}>
       <Grid gap={4} templateColumns={["1fr", "1fr 1fr", "1fr 1fr", "1fr 1fr 1fr"]}>
         <Card3a data={data[5]} />
-        <Card3a data={data[6]}/>
-        <Card3a data={data[7]}/>
-        <Card3a data={data[8]}/>
-        <Card3a data={data[9]}/>
+        <Card3a data={data[6]} />
+        <Card3a data={data[7]} />
+        <Card3a data={data[8]} />
+        <Card3a data={data[9]} />
       </Grid>
     </Box>
 
     {/* 3rd l */}
 
-    <Box p={{ base: 5, md: 10 }}>
+    <Box px={[2, 4, 6, 8]}>
       <Divider backgroundColor={"black"} height={"2px"} mt={5} />
       <Heading fontSize={"20px"} mt={5} mb={5} >Future Planet</Heading>
 
       <Flex p={{ base: 5, md: 10 }} display={{ base: "block", md: "flex", sm: "block" }} gap={3}>
-        <Card2b data={data[10]}/>
-        <Card2b data={data[11]}/>
+        <Card2b data={data[10]} />
+        <Card2b data={data[11]} />
       </Flex>
     </Box>
 
     {/* 4th l */}
 
-    <Box p={{ base: 5, md: 10 }}>
+    <Box px={[2, 4, 6, 8]}>
       <Divider backgroundColor={"black"} height={"2px"} mt={5} />
       <Heading fontSize={"20px"} mt={5} mb={5} >World of wonder</Heading>
-      <Card5b data={data[12]}/>
+      <Card5b data={data[12]} />
     </Box>
 
     {/* 5th l */}
@@ -104,7 +104,7 @@ export const Earth = () => {
 
     {/* 6th l */}
 
-    <Box p={{ base: 5, md: 10 }}>
+    <Box px={[2, 4, 6, 8]}>
       <Divider backgroundColor={"black"} height={"2px"} mt={5} />
       <Heading fontSize={"20px"} mt={5} mb={5} >Editor's Pic</Heading>
       <Card5 data={data[13]} />
@@ -112,17 +112,17 @@ export const Earth = () => {
 
     {/* 7th l */}
 
-    <Box p={{ base: 5, md: 10 }}>
+    <Box px={[2, 4, 6, 8]}>
       <Divider backgroundColor={"black"} height={"2px"} />
       <Heading fontSize={"20px"} mt={5} mb={5} >More in Buisness</Heading>
       <SearchCard data={data[14]} />
-      <SearchCard data={data[15]}/>
-      <SearchCard data={data[16]}/>
-      <SearchCard data={data[17]}/>
-      <SearchCard data={data[18]}/>
-      <SearchCard data={data[19]}/>
-      <SearchCard data={data[20]}/>
-      <SearchCard data={data[21]}/>
+      <SearchCard data={data[15]} />
+      <SearchCard data={data[16]} />
+      <SearchCard data={data[17]} />
+      <SearchCard data={data[18]} />
+      <SearchCard data={data[19]} />
+      <SearchCard data={data[20]} />
+      <SearchCard data={data[21]} />
       <SearchCard data={data[22]} />
     </Box>
 

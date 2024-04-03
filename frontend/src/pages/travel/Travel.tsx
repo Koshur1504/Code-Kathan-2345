@@ -40,7 +40,7 @@ export const Travel = () => {
   return (<>
     <Navbar />
     <Box
-      p="15"
+      px={[2, 4, 6, 8]}
       pr={{ base: "20px", md: "60px" }}
       pl={{ base: "20px", md: "60px" }}
     >
@@ -220,26 +220,26 @@ export const Travel = () => {
       </Box>
     </Box>
     {isVisible && (
-        <Box
-          onClick={scrollToTop}
-          position="fixed"
-          bottom="20px"
-          right={["16px", "84px"]}
-          zIndex={3}
+      <Box
+        onClick={scrollToTop}
+        position="fixed"
+        bottom="20px"
+        right={["16px", "84px"]}
+        zIndex={3}
+      >
+        <Button
+          w="50px"
+          h="50px"
+          variant="outline"
+          bg={"black"}
+          borderRadius={"50%"}
+          _hover={{ bg: "black", w: "55px", h: "55px" }}
         >
-          <Button
-            w="50px"
-            h="50px"
-            variant="outline"
-            bg={"black"}
-            borderRadius={"50%"}
-            _hover={{ bg: "black", w: "55px", h: "55px" }}
-          >
-            <ArrowUpIcon fontSize={"lg"} color={"white"} />
-          </Button>
-        </Box>
-      )}
-    <Footer/>
+          <ArrowUpIcon fontSize={"lg"} color={"white"} />
+        </Button>
+      </Box>
+    )}
+    <Footer />
   </>
   );
 };
