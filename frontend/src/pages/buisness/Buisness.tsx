@@ -15,7 +15,9 @@ import { useEffect, useState } from "react";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 
 export const Buisness = () => {
-  let data: Post[] = postData.posts.slice(0, 100);
+  let data: Post[] = postData.posts
+  .filter((post) => post.category === "buissness")
+  .slice(1, 32);
   const [isVisible, setIsVisible] = useState(false);
 
   const scrollToTop = () => {
@@ -47,42 +49,54 @@ export const Buisness = () => {
         <Divider backgroundColor={"black"} height={"2px"} />
         <br />
         <Box flexDirection={["column", "row"]} display={"flex"} gap={"2rem"}>
-          <Card5b />
-          <Card1 data={data[0]} />
+
+        <Box
+          flexDirection={["column", "row", "row"]}
+          display={"flex"}
+          gap={"2rem"}
+        >
+
+          <Card5b data={data[33]}/>
+          <Card1 data={data[1]} />
         </Box>
 
-      <Grid
-
-
-        justifyItems={"center"}
-        templateColumns={["repeat(1,1fr)", "repeat(3,1fr)", "repeat(5,1fr)"]}
-        alignContent={"center"}
-        marginX="auto"
-
-      >
-        <Box >
-          <Card1 />
-        </Box>
-        <Box>
-          <Card1 />
-        </Box>
-        <Box>
-          <Card1 />
-        </Box>
-        <Box>
-          <Card1 />
-        </Box>
-        <Box>
-          <Card1 />
-        </Box>
-      </Grid>
+        <Grid
+          justifyItems={"center"}
+          templateColumns={["repeat(1,1fr)", "repeat(3,1fr)", "repeat(5,1fr)"]}
+          alignContent={"center"}
+          marginX="auto"
+          
+        >
+          <Box>
+            <Card1 data={data[2]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[3]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[4]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[5]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[6]}/>
+          </Box>
+        </Grid>
 
       <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }} mb={20} mt={20} >
-        <Card3a />
-        <Card3a />
-        <Card3a />
+        <Card3a data={data[7]}/>
+        <Card3a data={data[8]}/>
+        <Card3a data={data[9]}/>
       </Grid>
     </Box>
+        <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }} mb={20}>
+          <Card3a data={data[10]}/>
+          <Card3a data={data[11]}/>
+          <Card3a data={data[12]}/>
+        </Grid>
+      </Box>
+
 
       <Carousel />
 
@@ -94,9 +108,9 @@ export const Buisness = () => {
         <TwoCards />
         <Divider backgroundColor={"black"} height={"2px"} mb={5} />
         <Grid templateColumns={{ sm: "1fr", md: "repeat(3, 1fr)" }}>
-          <Card2b data={data[10]} />
-          <Card2b data={data[11]} />
-          <Card2b data={data[12]} />
+          <Card2b data={data[13]} />
+          <Card2b data={data[14]} />
+          <Card2b data={data[15]} />
         </Grid>
       </Box>
 
@@ -108,64 +122,67 @@ export const Buisness = () => {
         <TwoCards />
       </Box>
 
-    <Box p={5}>
-      <Divider backgroundColor={"black"} height={"2px"} />
-      <Heading fontSize={"20px"} mt={5} mb={5} >Executive</Heading>
-      <Card5 />
-      <Divider backgroundColor={"black"} height={"2px"} mt={5} />
-      <Heading  fontSize={"20px"} mt={5} mb={5} >More news and features</Heading>
-      <Grid
-
-
-        justifyItems={"center"}
-        templateColumns={["repeat(1,1fr)", "repeat(3,1fr)", "repeat(4,1fr)"]}
-        alignContent={"center"}
-        marginX="auto"
-        mt={10}
-      >
-
-        <Box >
-          <Card1 />
-        </Box>
-        <Box>
-          <Card1 />
-        </Box>
-        <Box>
-          <Card1 />
-        </Box>
-        <Box>
-          <Card1 />
-        </Box>
-        <Box >
-          <Card1 />
-        </Box>
-        <Box>
-          <Card1 />
-        </Box>
-        <Box>
-          <Card1 />
-        </Box>
-        <Box>
-          <Card1 />
-        </Box>
-      </Grid>
-    </Box>
+      <Box p={5}>
+        <Divider backgroundColor={"black"} height={"2px"} />
+        <Heading fontSize={"20px"} mt={5} mb={5}>
+          Executive
+        </Heading>
+        <Card5 />
+        <Divider backgroundColor={"black"} height={"2px"} mt={5} />
+        <Heading fontSize={"20px"} mt={5} mb={5}>
+          More news and features
+        </Heading>
+        <Grid
+          justifyItems={"center"}
+          templateColumns={["repeat(1,1fr)", "repeat(3,1fr)", "repeat(4,1fr)"]}
+          alignContent={"center"}
+          marginX="auto"
+          mt={10}
+        >
+          <Box>
+            <Card1 data={data[16]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[17]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[18]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[19]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[20]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[21]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[22]}/>
+          </Box>
+          <Box>
+            <Card1 data={data[23]} />
+          </Box>
+        </Grid>
+      </Box>
 
       <Carousel />
 
-    <Box p={10}>
-    <Divider backgroundColor={"black"} height={"2px"} />
-      <Heading  fontSize={"20px"} mt={5} mb={5} >More in Buisness</Heading>
-      <SearchCard />
-      <SearchCard />
-      <SearchCard />
-      <SearchCard />
-      <SearchCard />
-      <SearchCard />
-      <SearchCard />
-      <SearchCard />
-      <SearchCard />
-    </Box>
+      <Box p={10}>
+        <Divider backgroundColor={"black"} height={"2px"} />
+        <Heading fontSize={"20px"} mt={5} mb={5}>
+          More in Buisness
+        </Heading>
+        <SearchCard data={data[24]}/>
+        <SearchCard data={data[25]}/>
+        <SearchCard data={data[26]}/>
+        <SearchCard data={data[27]}/>
+        <SearchCard data={data[28]}/>
+        <SearchCard data={data[29]}/>
+        <SearchCard data={data[30]}/>
+        <SearchCard data={data[31]}/>
+        <SearchCard data={data[32]}/>
+      </Box>
 
     {isVisible && (
         <Box

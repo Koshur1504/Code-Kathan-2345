@@ -10,9 +10,17 @@ import Card5 from "../../components/Card5/Card5";
 import Carousel from "../../components/CrousalCard/Crousal";
 import InnovationCard from "../../components/InnovationCard/InnovationCard";
 import InnovationCard2 from "../../components/InnovationCard/InnovationCard2";
+import { Post } from "../../utils/types";
+import postData from "../../../../backend/db.json";
+
 
 export const Innovation = () => {
   const [isLoaded, setIsloading] = useState(false);
+
+  let data: Post[] = postData.posts
+  .filter((post) => post.category === "innovation")
+  .slice(1, 30);
+
   const handleToggle = () => {
     setIsloading(!isLoaded);
   };
@@ -33,16 +41,16 @@ export const Innovation = () => {
           marginX="auto"
         >
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
         </Grid>
 
@@ -56,19 +64,19 @@ export const Innovation = () => {
         
         >
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} />
+            <InnovationCard2 isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} />
+            <InnovationCard2 isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} />
+            <InnovationCard2 isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} />
+            <InnovationCard2 isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard2 isLoaded={isLoaded} />
+            <InnovationCard2 isLoaded={isLoaded} data={data[1]}/>
           </Box>
         </Grid>
         
@@ -79,7 +87,7 @@ export const Innovation = () => {
       <Divider height={"2px"} backgroundColor={"black"} />
       <Heading fontSize={'25'}>Features</Heading>
       <br />
-      <Card5 />
+      <Card5 data={data[1]}/>
       <br />
       
       <Grid
@@ -90,28 +98,28 @@ export const Innovation = () => {
           marginX="auto"
         >
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
           <Box>
-            <InnovationCard isLoaded={isLoaded} />
+            <InnovationCard isLoaded={isLoaded} data={data[1]}/>
           </Box>
         </Grid>
      </Box>
