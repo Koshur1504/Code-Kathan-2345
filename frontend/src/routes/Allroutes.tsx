@@ -1,25 +1,27 @@
-import { Route, Routes } from "react-router-dom";
+import { Admin } from "../pages/Admin/Admin";
+import Article from "../pages/Article/Article";
+import Dashboard from "../pages/Dashboard/DashBoard";
+import { Login } from "../pages/Login/Login";
+import Trending from "../pages/Trending/Trending";
+import Users from "../pages/Users/users";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Buisness } from "../pages/buisness/Buisness";
 import { Culture } from "../pages/culture/Culture";
 import { Earth } from "../pages/earth/Earth";
 import { Home } from "../pages/home/Home";
 import { Innovation } from "../pages/innovation/Innovation";
 import { News } from "../pages/news/News";
+import { Profile } from "../pages/profile/profile";
+import { SearchPage } from "../pages/searchPage/SearchPage";
+import { Signup } from "../pages/signup/Signup";
 import { Sports } from "../pages/sports/Sports";
 import { Travel } from "../pages/travel/Travel";
 import { Video } from "../pages/video/Video";
 import { LayoutRoute } from "../utils/layoutRoute";
-import { Login } from "../pages/Login/Login";
-import { Signup } from "../pages/signup/Signup";
-import { Admin } from "../pages/Admin/Admin";
 import { ProtectedRoutes } from "./ProtectedRoutes";
-import { SearchPage } from "../pages/searchPage/SearchPage";
-import Dashboard from "../pages/Dashboard/DashBoard";
-import Trending from "../pages/Trending/Trending";
 import Category from "../pages/Category/Category";
-import Article from "../pages/Article/Article";
-import Settings from "../pages/Settings/Settings";
-import { Profile } from "../pages/profile/profile";
+import SearchbarPage from "../pages/SearchBarPage/SearchbarPage";
+import { AnimatePresence } from "framer-motion";
 
 export const layout: LayoutRoute[] = [
   { id: 1, name: "Home", path: "/", isVisible: true, element: <Home /> },
@@ -44,6 +46,14 @@ export const layout: LayoutRoute[] = [
     path: "/innovation",
     isVisible: true,
     element: <Innovation />,
+  },
+  {
+    id:14,
+    name:"SearchBarPage",
+    path:"/searchbarpage",
+    isVisible:false,
+    element:<SearchbarPage/>
+
   },
   {
     id: 6,
@@ -102,7 +112,7 @@ export const layout: LayoutRoute[] = [
   {
     id: 14,
     name: "DashBoard",
-    path: "/admin/dashboard",
+    path: "/admin/dashboard/",
     isVisible: false,
     element: (
       <ProtectedRoutes>
@@ -113,7 +123,7 @@ export const layout: LayoutRoute[] = [
   {
     id: 15,
     name: "Trending",
-    path: "/admin/trending",
+    path: "/admin/trending/",
     isVisible: false,
     element: (
       <ProtectedRoutes>
@@ -124,7 +134,7 @@ export const layout: LayoutRoute[] = [
   {
     id: 16,
     name: "Category",
-    path: "/admin/category",
+    path: "/admin/category/",
     isVisible: false,
     element: (
       <ProtectedRoutes>
@@ -135,7 +145,7 @@ export const layout: LayoutRoute[] = [
   {
     id: 17,
     name: "Article",
-    path: "/admin/article",
+    path: "/admin/article/",
     isVisible: false,
     element: (
       <ProtectedRoutes>
@@ -146,11 +156,11 @@ export const layout: LayoutRoute[] = [
   {
     id: 18,
     name: "Setting",
-    path: "/admin/settings",
+    path: "/admin/users/",
     isVisible: false,
     element: (
       <ProtectedRoutes>
-        <Settings />
+        <Users />
       </ProtectedRoutes>
     ),
   },
@@ -175,11 +185,14 @@ export const layout: LayoutRoute[] = [
 ];
 
 export const Allroutes = () => {
+  const location = useLocation();
   return (
-    <Routes>
-      {layout.map((item) => (
-        <Route key={item.id} path={item.path} element={item.element} />
-      ))}
-    </Routes>
+    <AnimatePresence>
+      <Routes location={location} key={location.pathname}>
+        {layout.map((item) => (
+          <Route key={item.id} path={item.path} element={item.element} />
+        ))}
+      </Routes>
+    </AnimatePresence>
   );
 };
